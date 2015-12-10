@@ -9,6 +9,6 @@ public interface ProductInfoService {
     void addProductInfo(ProductInfo productInfo);
     void updateProductInfo(ProductInfo productInfo);
     void removeProductInfo(Long id);
-    Collection<ProductInfo> findProductInfo(Long id);
+    Collection<ProductInfo> findProductInfoByProductId(Long id);
     ProductInfo findProductInfoById(Long id);
 }

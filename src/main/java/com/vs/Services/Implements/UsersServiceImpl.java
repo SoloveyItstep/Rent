@@ -20,46 +20,46 @@ public class UsersServiceImpl implements UsersService, StatusService{
 
     @Override
     public void registerNewUser(Users user) {
-
+        usersRepository.save(user);
     }
 
     @Override
     public Users findUserById(Long id) {
-        return null;
+        return usersRepository.findOne(id);
     }
 
     @Override
     public void updateUser(Users user) {
-
+        usersRepository.save(user);
     }
 
     @Override
     public Collection<Users> findAllUsers() {
-        return null;
+        return usersRepository.findAll();
     }
 
     @Override
     public void deleteUser(Long id) {
-
+        usersRepository.delete(id);
     }
 
     @Override
     public void addStatus(Statuses status) {
-
+        statusesRepository.save(status);
     }
 
     @Override
     public Statuses findStatusById(Long id) {
-        return null;
+        return statusesRepository.findOne(id);
     }
 
     @Override
     public Collection<Statuses> findAllStatuses() {
-        return null;
+        return statusesRepository.findAll();
     }
 
     @Override
     public void deleteStatus(Long id) {
-
+        statusesRepository.delete(id);
     }
 }

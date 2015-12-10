@@ -16,21 +16,21 @@ public class StatusesServiceImpl implements StatusService {
 
     @Override
     public void addStatus(Statuses status) {
-
+        repository.save(status);
     }
 
     @Override
     public Statuses findStatusById(Long id) {
-        return null;
+        return repository.findOne(id);
     }
 
     @Override
     public Collection<Statuses> findAllStatuses() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public void deleteStatus(Long id) {
-
+        repository.delete(id);
     }
 }

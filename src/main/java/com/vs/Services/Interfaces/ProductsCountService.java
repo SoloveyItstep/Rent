@@ -14,7 +14,7 @@ public interface ProductsCountService {
 
     Collection<ProductCount> findAll();
 
-    Collection<ProductCount> findProductCountByProductId(Long productId);
+    Collection<ProductCount> findProductsCountByProductId(Long productId);
 
     void deleteProductCount(Long id);
 }

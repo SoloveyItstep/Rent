@@ -17,51 +17,51 @@ public class CategoriesServiceImpl implements CategoriesService {
 
     @Override
     public void addCategory(Categories categories) {
-
+        repository.save(categories);
     }
 
     @Override
     public void addSubcategory(Categories categories) {
-
+        repository.save(categories);
     }
 
     @Override
     public void updateCategory(Categories categories) {
-
+        repository.save(categories);
     }
 
     @Override
     public void updateSubcategory(Categories categories) {
-
+        repository.save(categories);
     }
 
     @Override
     public void removeCategory(Long id) {
-
+        repository.delete(id);
     }
 
     @Override
     public void removeSubcategory(Long id) {
-
+        repository.delete(id);
     }
 
     @Override
     public Collection<Categories> findCategories() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public Collection<Categories> findSubcategories(Long categoryId) {
-        return null;
+        return repository.findSubcategoriesByCategoryId(categoryId);
     }
 
     @Override
     public Categories findCategory(Long id) {
-        return null;
+        return repository.findOne(id);
     }
 
     @Override
     public Categories findSubcategory(Long id) {
-        return null;
+        return repository.findOne(id);
     }
 }

@@ -60,91 +60,92 @@ public class ProductServiceImpl implements ProductsService, ProductInfoService, 
 
     @Override
     public Products findProductById(Long id) {
-        return null;
+        return productsRepository.findOne(id);
     }
 
+    //add check for current product id
     @Override
     public void addProductInfo(ProductInfo productInfo) {
-
+        productInfoRepository.save(productInfo);
     }
 
     @Override
     public void updateProductInfo(ProductInfo productInfo) {
-
+        productInfoRepository.save(productInfo);
     }
 
     @Override
     public void removeProductInfo(Long id) {
-
+        productInfoRepository.delete(id);
     }
 
     @Override
-    public Collection<ProductInfo> findProductInfo(Long id) {
-        return null;
+    public Collection<ProductInfo> findProductInfoByProductId(Long id) {
+        return productInfoRepository.findInfosByProductId(id);
     }
 
     @Override
     public ProductInfo findProductInfoById(Long id) {
-        return null;
+        return productInfoRepository.findOne(id);
     }
 
     @Override
     public void addProductsCount(ProductCount productCount) {
-
+        productCountRepository.save(productCount);
     }
 
     @Override
     public void updateProductCount(ProductCount productCount) {
-
+        productCountRepository.save(productCount);
     }
 
     @Override
     public ProductCount findProductCountById(Long id) {
-        return null;
+        return productCountRepository.findOne(id);
     }
 
     @Override
     public Collection<ProductCount> findAll() {
-        return null;
+        return productCountRepository.findAll();
     }
 
     @Override
-    public Collection<ProductCount> findProductCountByProductId(Long productId) {
-        return null;
+    public Collection<ProductCount> findProductsCountByProductId(Long productId) {
+        return productCountRepository.findProductCountByProductId(productId);
     }
 
     @Override
     public void deleteProductCount(Long id) {
-
+        productCountRepository.delete(id);
     }
 
     @Override
     public void addRentProduct(RentProducts rentProduct) {
-
+        rentStatusRepository.save(rentProduct);
     }
 
     @Override
     public void updateRentProduct(RentProducts rentProduct) {
-
+        rentStatusRepository.save(rentProduct);
     }
 
     @Override
     public RentProducts findRentProductById(Long id) {
-        return null;
+        return rentStatusRepository.findOne(id);
     }
 
     @Override
     public Collection<RentProducts> findRentProducts() {
-        return null;
+        return rentStatusRepository.findAll();
     }
 
     @Override
     public Collection<RentProducts> findRentProductsByProductId(Long productId) {
-        return null;
+        return rentStatusRepository.findRentProductsByProductId(productId);
     }
 
     @Override
     public void deleteRentProduct(Long id) {
-
+        rentStatusRepository.delete(id);
     }
 }
