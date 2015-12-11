@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="Layouts/_layout :: head" >
+    <!-- head from layout -->
+</head>
+
+<body ng-app="Categories">
+
+<header th:replace="Layouts/_layout :: header">
+    <!-- header from layout -->
+</header>
+
+<div>
+    <!--@thymesVar id="categories" type="Categories.class"-->
+    <ul th:each="cat: ${categories}">
+        <li th:text="${cat.name}"></li>
+    </ul>
+</div>
+
+<div ng-controller="CategoriesController">
+
+    <select>
+        <option ng-repeat="category in categories">{{categories.name}}</option>
+    </select>
+
+</div>
+</body>
+</html>
