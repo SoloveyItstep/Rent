@@ -1,5 +1,7 @@
 package com.vs.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.List;
@@ -18,13 +20,16 @@ public class Products {
     private String image;
 
     @ManyToOne(optional = true)
-    @JoinColumn(name = "subcategory_id",nullable = false)
+    @JoinColumn(name = "subcategory_id")
+    @JsonManagedReference
     private Categories subcategory;
 
     @OneToMany(mappedBy = "product")
+    @JsonManagedReference
     private List<ProductInfo> productInfos;
 
     @OneToOne(mappedBy = "product")
+    @JsonManagedReference
     private ProductCount productCount;
 
     @OneToMany(mappedBy = "product")

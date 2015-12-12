@@ -16,7 +16,7 @@ public class RentProducts {
     private long order_num;
 
     @ManyToOne(optional = true)
-    @JoinColumn(name = "product_id",nullable = false)
+    @JoinColumn(name = "product_id")
     private Products product;
 
     @ManyToOne(optional = true)

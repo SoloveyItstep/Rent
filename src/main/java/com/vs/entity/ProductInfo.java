@@ -1,5 +1,7 @@
 package com.vs.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
 
@@ -13,7 +15,8 @@ public class ProductInfo {
     private String description;
 
     @ManyToOne(optional = true)
-    @JoinColumn(name = "products_id",nullable = false)
+    @JoinColumn(name = "products_id")
+    @JsonBackReference
     private Products product;
 
     public ProductInfo() {

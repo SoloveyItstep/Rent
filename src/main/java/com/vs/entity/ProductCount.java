@@ -1,10 +1,12 @@
 package com.vs.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "product_count")
+@Table(name = "products_count")
 public class ProductCount {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,7 +15,8 @@ public class ProductCount {
     private long in_rent;
 
     @OneToOne(optional = true)
-    @JoinColumn(name = "product_id",nullable = false)
+    @JoinColumn(name = "product_id")
+    @JsonBackReference
     private Products product;
 
     public ProductCount() {

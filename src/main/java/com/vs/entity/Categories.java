@@ -1,5 +1,8 @@
 package com.vs.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.List;
@@ -13,13 +16,16 @@ public class Categories {
     private String name;
 
     @ManyToOne(optional = true)
-    @JoinColumn(name = "subcategory_id")
+    @JoinColumn(name = "parent_id")
+    @JsonBackReference
     private Categories category;
 
     @OneToMany(mappedBy = "category")
+    @JsonManagedReference
     private List<Categories> subcategories;
 
     @OneToMany(mappedBy = "subcategory")
+    @JsonBackReference
     private List<Products> products;
 
     public Categories() {

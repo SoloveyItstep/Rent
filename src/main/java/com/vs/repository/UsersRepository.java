@@ -24,4 +24,6 @@ public interface UsersRepository extends CrudRepository<Users,Long> {
 
     @Override
     void delete(Long id);
+
+    Users findByUsername(String username);
 }

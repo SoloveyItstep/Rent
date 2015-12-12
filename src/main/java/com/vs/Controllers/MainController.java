@@ -1,16 +1,13 @@
 package com.vs.Controllers;
 
-import com.vs.entity.Products;
 import com.vs.repository.CategoriesRepository;
 import com.vs.repository.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
-import java.util.List;
-
-@RestController
+@Controller
 public class MainController {
     @Autowired
     private CategoriesRepository categoriesRepository;
@@ -19,7 +16,19 @@ public class MainController {
     private ProductsRepository productsRepository;
 
     @RequestMapping("/")
-    public Collection<Products> Index(){
-        return productsRepository.findAll();
+    public String Index(Model model){
+        //model.addAttribute("categories",categoriesRepository.findAll());
+        return "Index";
     }
+
+    @RequestMapping("/productsHtml")
+    public String Products(){
+        return "Products";
+    }
+
+    @RequestMapping("/productHtml")
+    public String Product(){
+        return "Product";
+    }
+
 }

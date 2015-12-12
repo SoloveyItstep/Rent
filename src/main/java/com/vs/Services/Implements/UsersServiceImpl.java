@@ -44,6 +44,11 @@ public class UsersServiceImpl implements UsersService, StatusService{
     }
 
     @Override
+    public Users findByUsername(String username) {
+        return usersRepository.findByUsername(username);
+    }
+
+    @Override
     public void addStatus(Statuses status) {
         statusesRepository.save(status);
     }

@@ -15,4 +15,6 @@ public interface UsersService {
     Collection<Users> findAllUsers();
 
     void deleteUser(Long id);
+
+    Users findByUsername(String username);
 }

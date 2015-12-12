@@ -9,6 +9,8 @@ public interface CategoriesRepository extends CrudRepository<Categories,Long> {
     @Override
     Categories save(Categories categories);
 
+    Collection<Categories> findByCategoryIsNull();
+
     Collection<Categories> findSubcategoriesByCategoryId(Long categoryId);
 
     @Override
