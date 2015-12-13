@@ -1,0 +1,25 @@
+<nav class="blog-nav">
+    <div class="row">
+    <div ng-repeat="product in products">
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a href="#/prod/{{product.id}}">
+                        <img src="{{product.image}}" alt="{{product.name}}"/>
+                    </a>
+                    <div class="caption">
+                        <h3 style="margin-left: 100px;">{{product.name}}</h3>
+                        <div ng-repeat="info in product.productInfos" style="margin-left: 20px; font-family: Consolas; font-size: 10px;">
+                        <span style="font-weight: bold;">{{info.title}}:</span>
+                        <span>{{info.description}}</span>
+                        </div>
+                        <br/>
+                        <p style="margin-left: 90px;">
+                            <a href="#/prod/{{product.id}}" class="btn btn-primary" role="button">Learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+</nav>

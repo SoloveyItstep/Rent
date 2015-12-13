@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head th:replace="Layouts/_layout :: head" >
+    <!-- head from layout -->
+</head>
+
+<body>
+
+<header th:replace="Layouts/_layout :: header">
+    <!-- header from layout -->
+</header>
+
+<section class="main">
+
+    <h1>Login Page</h1>
+
+    <div th:if="${param.error}" th:text="${param.error}">
+    </div>
+    <form action="/login" method="post" style="width: 400px; margin-left: 100px;">
+        <input class="form-control" type="text" name="username" placeholder="Username"/>
+        <br/>
+        <input class="form-control" type="password" name="password" placeholder="Password"/>
+        <br/>
+        <input class="btn btn-success" type="submit" value="Login"/>
+    </form>
+
+    <!--<p sec:authentication="name"></p>-->
+
+</section>
+
+</body>
+</html>

@@ -10,10 +10,10 @@
     <table name="categories" schema="" catalog="java_coursedb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="35" scale="0" nullable="false" jdbcType="12"/>
-      <column name="subcategory_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="parent_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="categories_ibfk_1" columns="subcategory_id" ref-table="categories" ref-schema="" ref-catalog="java_coursedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="categories_ibfk_1" table="categories" schema="" catalog="java_coursedb" columns="subcategory_id"/>
+      <foreign-key name="categories_ibfk_1" columns="parent_id" ref-table="categories" ref-schema="" ref-catalog="java_coursedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="categories_ibfk_1" table="categories" schema="" catalog="java_coursedb" columns="parent_id"/>
       <exported-key name="products_ibfk_1" table="products" schema="" catalog="java_coursedb" columns="subcategory_id"/>
     </table>
     <table name="product_info" schema="" catalog="java_coursedb" type="TABLE">
@@ -53,6 +53,7 @@
       <column name="count" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
       <column name="order_num" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="time_order" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="rent_products_ibfk_1" columns="product_id" ref-table="products" ref-schema="" ref-catalog="java_coursedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="rent_products_ibfk_2" columns="user_id" ref-table="users" ref-schema="" ref-catalog="java_coursedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
@@ -61,6 +62,7 @@
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="status" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
       <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="statuses_ibfk_1" columns="user_id" ref-table="users" ref-schema="" ref-catalog="java_coursedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="users_ibfk_1" table="users" schema="" catalog="java_coursedb" columns="status"/>
@@ -73,6 +75,8 @@
       <column name="email" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="phone" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
       <column name="status" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="username" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="users_ibfk_1" columns="status" ref-table="statuses" ref-schema="" ref-catalog="java_coursedb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="rent_products_ibfk_2" table="rent_products" schema="" catalog="java_coursedb" columns="user_id"/>
