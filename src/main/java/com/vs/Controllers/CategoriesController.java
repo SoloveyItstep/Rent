@@ -34,6 +34,11 @@ public class CategoriesController {
         return productsRepository.findProductsBySubcategoryId(id);
     }
 
+    @RequestMapping(value = "/category/{id}")
+    public Categories categoriesById(@PathVariable Long id){
+        return categoriesRepository.findOne(id);
+    }
+
     @RequestMapping(value = "product/{id}")
     public Products getProductById(@PathVariable Long id){
         return productsRepository.findOne(id);

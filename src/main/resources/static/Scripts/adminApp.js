@@ -1,7 +1,7 @@
 var app = angular.module("AdminApp",["ngRoute"]);
 
 app.config(['$routeProvider',function($routeProvider) {
-    $routeProvider.when("/addcategories", {
+    $routeProvider.when("/categories", {
             templateUrl: "/addcategoriesHtml",
             controller: "AdminController",
         })
@@ -9,9 +9,29 @@ app.config(['$routeProvider',function($routeProvider) {
             templateUrl: "addcategoryHtml",
             controller: "AdminController"
         })
-        .when("/addsubcategory", {
-            templateUrl: "/addsubcategoryHtml",
+        .when("/editcategory/:id", {
+            templateUrl: "editcategoryHtml",
+            controller: "EditCategoryController"
+        })
+        .when("/deletecategory/:id",{
+            templateUrl: "/deletecategoryHtml",
+            controller: "EditCategoryController"
+        })
+        .when("/removecategory/:id",{
+            templateUrl: "removecategoryHtml",
             controller: "AdminController"
+        })
+        .when("/subcategories",{
+            templateUrl: "/subcategoriesHtml",
+            controller: "AdminController"
+        })
+        .when("/addsubcategory/:id", {
+            templateUrl: "/addsubcategoryHtml",
+            controller: "CreateSubcategoryController"
+        })
+        .when("/editsubcategory", {
+            templateUrl: "editsubcategoryHtml",
+            controller: "EditCategoryController"
         })
         .when("/addproduct", {
             templateUrl: "/addproductHtml",
@@ -21,11 +41,11 @@ app.config(['$routeProvider',function($routeProvider) {
             templateUrl: "editproductHtml",
             controller: "AdminController"
         })
-        .when("/addproducts", {
+        .when("/products", {
             templateUrl: "/addproductsHtml",
             controller: "AdminController"
         })
         .otherwise({
-            redirectTo: '/'
+            redirectTo: '/admin'
         });
 }]);

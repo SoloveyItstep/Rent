@@ -1,3 +1,14 @@
 <div>
-    <h2>Add Subcategory</h2>
+    <h2>Create Subcategory in '{{category.name}}' Category</h2>
 </div>
+<br/>
+<form action="/savesubcategoryHtml" method="post" style="width: 400px;">
+    <input type="hidden" name="parent_id" value="{{category.id}}"/>
+
+    <input type="text" name="name" class="form-control" placeholder="Enter name"/>
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="submit">Create!</button>
+            </span>
+</form>
+<br/><br/>
+<a class="btn btn-success" href="#/subcategories">Cancel</a>

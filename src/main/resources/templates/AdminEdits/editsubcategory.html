@@ -1,3 +1,15 @@
 <div>
     <h2>Edit Subcategory</h2>
 </div>
+
+<div>
+    <form action="/savecategoryHtml" method="post" style="width: 400px;">
+        <input type="hidden" name="id" value="{{category.id}}"/>
+        <input type="text" name="name" class="form-control" value="{{category.name}}" placeholder="Enter new name"/>
+            <span class="input-group-btn">
+                <button class="btn btn-info" type="submit">Rename!</button>
+            </span>
+    </form>
+</div>
+<br/><br/>
+<a class="btn btn-success" href="#/subcategories">Cancel</a>

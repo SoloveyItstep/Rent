@@ -1,0 +1,15 @@
+<div>
+    <h2>Remove Subcategory</h2>
+</div>
+<br/>
+
+<form action="/removecategoryHtml" method="post">
+    <input type="hidden" value="{{category.id}}" name="id"/>
+    <h2><input type="text" name="text" class="label label-info">{{category.name}}</input></h2>
+    <br/>
+    <br/>
+    <button type="submit" class="btn btn-danger">Remove</button>
+</form>
+<br/>
+<br/>
+<a class="btn btn-success" href="/admin">Cancel</a>

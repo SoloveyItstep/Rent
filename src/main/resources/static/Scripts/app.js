@@ -5,6 +5,9 @@ app.config(['$routeProvider',function($routeProvider){
             templateUrl: "/productsHtml",
             controller: "ProductsController",
         })
+            .when("/admin",{
+            templateUrl: "/admin"
+        })
          .when("/prod/:id",{
             templateUrl: "/productHtml",
             controller: "OneProductController"

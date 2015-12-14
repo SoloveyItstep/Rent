@@ -1,3 +1,26 @@
 <div>
-    <h2>Add Categories!</h2>
+    <h2>Categories!</h2>
+</div>
+<a href="#/addcategory" class="btn btn-success" style="margin-left: 150px;">Add new Category</a>
+<br/>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <ul class="list-group" ng-repeat="category in categories">
+                <li class="list-group-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4"><h4>{{category.name}}</h4></div>
+
+                            <div class="col-lg-4">
+                                <a href="#/editcategory/{{category.id}}" class="btn btn-info">Edit</a>
+                                <a href="#/deletecategory/{{category.id}}" class="btn btn-danger">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

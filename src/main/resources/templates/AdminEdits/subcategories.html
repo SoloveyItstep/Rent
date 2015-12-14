@@ -1,0 +1,33 @@
+<div>
+    <h2>Subcategories</h2>
+</div>
+<br/>
+
+<select ng-model="categ" ng-options="category.name for category in categories">
+    <option value="">-- choose Category --</option>
+</select>
+<br/>
+<a href="#/addsubcategory/{{categ.id}}" class="btn btn-success" style="margin-left: 150px;">Add new Subcategory</a>
+<br/>
+<br/>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <ul class="list-group" ng-repeat="subcategory in categ.subcategories">
+                <li class="list-group-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4"><h4>{{subcategory.name}}</h4></div>
+
+                            <div class="col-lg-4">
+                                <a href="#/editsubcategory/{{category.id}}" class="btn btn-info">Edit</a>
+                                <a href="#/deletesubcategory/{{category.id}}" class="btn btn-danger">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
